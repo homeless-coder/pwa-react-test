@@ -1,11 +1,29 @@
 import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import './App.css'
+import { GraphQLClient, ClientContext, useQuery } from 'graphql-hooks'
+
+const client = new GraphQLClient({
+  url: 'https://beta.pokeapi.co/graphql/v1beta'
+})
+
+const POKE_QUERY = `
+  query ExampleQuery($pokemonV2AbilityByPkId: Int!) {
+    pokemon_v2_ability_by_pk(id: $pokemonV2AbilityByPkId) {
+      generation_id
+    }
+  }
+`
 
 function App() {
   const [count, setCount] = useState(0)
   const [data, setData] = useState([])
-
+  const { loading, error, data: pokeData } = useQuery(POKE_QUERY, {
+    variables: {
+      pokemonV2AbilityByPkId: 2
+    }
+  })
+  console.log({pokeData})
   useEffect(() => {
     fetch('https://reqres.in/api/users').then((res) => res.json()).then((res) => setData(res.data))
   }, [])
