@@ -42,20 +42,23 @@ function App() {
 
   return (
     <div className="App">
-    <button onClick={getFirstPage}>Página 1</button>
-    <button onClick={getSecondPage}>Página 2</button>
-    <button onClick={getThirdPage}>Página 3</button>
-      {
-        data.map((user) => (
-          <div key={user.id}>
-            <p>{`${user.first_name} ${user.last_name}`}</p>
-            <p>{user.email}</p>
-            <img src={user.avatar} />
-            <br />
-          </div>
-        ))
-      }
-    </div>
+      <button onClick={getFirstPage}>Página 1</button>
+      <button onClick={getSecondPage}>Página 2</button>
+      <button onClick={getThirdPage}>Página 3</button>
+        {
+          data.map((user) => (
+            <>
+              <div key={user.id}>
+                <p>{`${user.first_name} ${user.last_name}`}</p>
+                <p>{user.email}</p>
+                <img src={user.avatar} />
+                <br />
+              </div>
+              <p>PKM: {pokeData?.pokemon_v2_ability_by_pk?.generation_id}</p>
+            </>
+          ))
+        }
+      </div>
   )
 }
 
