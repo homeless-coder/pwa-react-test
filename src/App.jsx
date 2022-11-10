@@ -10,6 +10,10 @@ function App() {
     fetch('https://reqres.in/api/users').then((res) => res.json()).then((res) => setData(res.data))
   }, [])
 
+  const getFirstPage = () => {
+    fetch('https://reqres.in/api/users').then((res) => res.json()).then((res) => setData(res.data))
+  }
+
   const getSecondPage = () => {
     fetch('https://reqres.in/api/users?page=2').then((res) => res.json()).then((res) => setData(res.data))
   }
@@ -20,6 +24,7 @@ function App() {
 
   return (
     <div className="App">
+    <button onClick={getFirstPage}>Página 1</button>
     <button onClick={getSecondPage}>Página 2</button>
     <button onClick={getThirdPage}>Página 3</button>
       {
