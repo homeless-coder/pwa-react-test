@@ -1,5 +1,2 @@
-[[headers]]
-  for = "/assets/*"
-  [headers.values]
-      cache-control = '''
-      private'''
+/data/*
+  cache-control: private
