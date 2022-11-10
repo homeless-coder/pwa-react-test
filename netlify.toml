@@ -1,2 +1,5 @@
-/data/*
-  cache-control: private
+[[headers]]
+  for = "/*"
+  [headers.values]
+  cache-control = '''
+  private'''
