@@ -13,8 +13,6 @@
     "@algolia/autocomplete-theme-classic": "^1.7.1",
     "@auth0/auth0-spa-js": "^1.19.2",
     "@buttercup/react-formatted-input": "^1.4.0",
-    "@h4b-dev/components": "^1.3.30",
-    "@h4b-dev/hooks": "1.1.7",
     "@seatsio/seatsio-react": "^11.0.0",
     "@sentry/react": "^6.15.0",
     "@storeon/localstorage": "^1.4.0",
