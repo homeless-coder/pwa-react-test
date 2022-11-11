@@ -11,10 +11,10 @@ export default defineConfig({
     reactRefresh(),
     reactSvgrPlugin(),
     VitePWA({
-      strategies: 'generateSW',
+      strategies: 'injectManifest',
       registerType: 'autoUpdate',
       injectRegister: 'auto',
-      workbox: {
+      injectManifest: {
         globPatterns: ['**/*.{js,css,html,ico,png,svg}'],
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
